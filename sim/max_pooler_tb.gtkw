@@ -1,0 +1,41 @@
+[*]
+[*] GTKWave Analyzer v3.3.125 (w)1999-2025 BSI
+[*] Thu Feb 12 04:37:58 2026
+[*]
+[dumpfile] "/home/palachan/verilogworks/conv_accelerator/rtl/max_pooler_tb.vcd"
+[dumpfile_mtime] "Thu Feb 12 04:19:44 2026"
+[dumpfile_size] 2007
+[savefile] "/home/palachan/verilogworks/conv_accelerator/rtl/max_pooler_tb.gtkw"
+[timestart] 0
+[size] 1920 1001
+[pos] -27 -24
+*-6.020161 195 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] max_pooler_tb.
+[sst_width] 290
+[signals_width] 182
+[sst_expanded] 1
+[sst_vpaned_height] 296
+@420
+max_pooler_tb.uut.BIT_WIDTH
+max_pooler_tb.uut.INPUT_WIDTH
+max_pooler_tb.uut.OUTPUT_WIDTH
+max_pooler_tb.uut.POINTER_WIDTH
+@28
+max_pooler_tb.uut.ce
+max_pooler_tb.uut.clk
+@23
+max_pooler_tb.uut.current_h_max[15:0]
+@24
+max_pooler_tb.uut.data_in[15:0]
+@28
+max_pooler_tb.uut.even_col
+max_pooler_tb.uut.even_row
+max_pooler_tb.uut.line_buffer_pointer
+max_pooler_tb.uut.reset
+max_pooler_tb.uut.valid_in
+@24
+max_pooler_tb.uut.data_out[15:0]
+@28
+max_pooler_tb.uut.valid_out
+[pattern_trace] 1
+[pattern_trace] 0

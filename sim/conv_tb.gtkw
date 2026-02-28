@@ -1,0 +1,185 @@
+[*]
+[*] GTKWave Analyzer v3.3.125 (w)1999-2025 BSI
+[*] Wed Feb 11 01:11:46 2026
+[*]
+[dumpfile] "/home/palachan/verilogworks/conv_accelerator/rtl/conv_tb.vcd"
+[dumpfile_mtime] "Wed Feb 11 01:02:23 2026"
+[dumpfile_size] 13297
+[savefile] "/home/palachan/verilogworks/conv_accelerator/rtl/conv_tb.gtkw"
+[timestart] 0
+[size] 1920 1001
+[pos] -27 -24
+*-4.891952 76 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] conv_tb.
+[sst_width] 290
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 296
+@420
+conv_tb.BIT_WIDTH
+conv_tb.IMG_WIDTH
+conv_tb.K2
+conv_tb.KERNEL_WIDTH
+@200
+-
+-
+@28
+conv_tb.ce
+conv_tb.clk
+@24
+conv_tb.pixel_in[15:0]
+conv_tb.pixel_out[31:0]
+@28
+conv_tb.reset
+conv_tb.valid_out
+@c00022
+conv_tb.weights_in[143:0]
+@28
+(0)conv_tb.weights_in[143:0]
+(1)conv_tb.weights_in[143:0]
+(2)conv_tb.weights_in[143:0]
+(3)conv_tb.weights_in[143:0]
+(4)conv_tb.weights_in[143:0]
+(5)conv_tb.weights_in[143:0]
+(6)conv_tb.weights_in[143:0]
+(7)conv_tb.weights_in[143:0]
+(8)conv_tb.weights_in[143:0]
+(9)conv_tb.weights_in[143:0]
+(10)conv_tb.weights_in[143:0]
+(11)conv_tb.weights_in[143:0]
+(12)conv_tb.weights_in[143:0]
+(13)conv_tb.weights_in[143:0]
+(14)conv_tb.weights_in[143:0]
+(15)conv_tb.weights_in[143:0]
+(16)conv_tb.weights_in[143:0]
+(17)conv_tb.weights_in[143:0]
+(18)conv_tb.weights_in[143:0]
+(19)conv_tb.weights_in[143:0]
+(20)conv_tb.weights_in[143:0]
+(21)conv_tb.weights_in[143:0]
+(22)conv_tb.weights_in[143:0]
+(23)conv_tb.weights_in[143:0]
+(24)conv_tb.weights_in[143:0]
+(25)conv_tb.weights_in[143:0]
+(26)conv_tb.weights_in[143:0]
+(27)conv_tb.weights_in[143:0]
+(28)conv_tb.weights_in[143:0]
+(29)conv_tb.weights_in[143:0]
+(30)conv_tb.weights_in[143:0]
+(31)conv_tb.weights_in[143:0]
+(32)conv_tb.weights_in[143:0]
+(33)conv_tb.weights_in[143:0]
+(34)conv_tb.weights_in[143:0]
+(35)conv_tb.weights_in[143:0]
+(36)conv_tb.weights_in[143:0]
+(37)conv_tb.weights_in[143:0]
+(38)conv_tb.weights_in[143:0]
+(39)conv_tb.weights_in[143:0]
+(40)conv_tb.weights_in[143:0]
+(41)conv_tb.weights_in[143:0]
+(42)conv_tb.weights_in[143:0]
+(43)conv_tb.weights_in[143:0]
+(44)conv_tb.weights_in[143:0]
+(45)conv_tb.weights_in[143:0]
+(46)conv_tb.weights_in[143:0]
+(47)conv_tb.weights_in[143:0]
+(48)conv_tb.weights_in[143:0]
+(49)conv_tb.weights_in[143:0]
+(50)conv_tb.weights_in[143:0]
+(51)conv_tb.weights_in[143:0]
+(52)conv_tb.weights_in[143:0]
+(53)conv_tb.weights_in[143:0]
+(54)conv_tb.weights_in[143:0]
+(55)conv_tb.weights_in[143:0]
+(56)conv_tb.weights_in[143:0]
+(57)conv_tb.weights_in[143:0]
+(58)conv_tb.weights_in[143:0]
+(59)conv_tb.weights_in[143:0]
+(60)conv_tb.weights_in[143:0]
+(61)conv_tb.weights_in[143:0]
+(62)conv_tb.weights_in[143:0]
+(63)conv_tb.weights_in[143:0]
+(64)conv_tb.weights_in[143:0]
+(65)conv_tb.weights_in[143:0]
+(66)conv_tb.weights_in[143:0]
+(67)conv_tb.weights_in[143:0]
+(68)conv_tb.weights_in[143:0]
+(69)conv_tb.weights_in[143:0]
+(70)conv_tb.weights_in[143:0]
+(71)conv_tb.weights_in[143:0]
+(72)conv_tb.weights_in[143:0]
+(73)conv_tb.weights_in[143:0]
+(74)conv_tb.weights_in[143:0]
+(75)conv_tb.weights_in[143:0]
+(76)conv_tb.weights_in[143:0]
+(77)conv_tb.weights_in[143:0]
+(78)conv_tb.weights_in[143:0]
+(79)conv_tb.weights_in[143:0]
+(80)conv_tb.weights_in[143:0]
+(81)conv_tb.weights_in[143:0]
+(82)conv_tb.weights_in[143:0]
+(83)conv_tb.weights_in[143:0]
+(84)conv_tb.weights_in[143:0]
+(85)conv_tb.weights_in[143:0]
+(86)conv_tb.weights_in[143:0]
+(87)conv_tb.weights_in[143:0]
+(88)conv_tb.weights_in[143:0]
+(89)conv_tb.weights_in[143:0]
+(90)conv_tb.weights_in[143:0]
+(91)conv_tb.weights_in[143:0]
+(92)conv_tb.weights_in[143:0]
+(93)conv_tb.weights_in[143:0]
+(94)conv_tb.weights_in[143:0]
+(95)conv_tb.weights_in[143:0]
+(96)conv_tb.weights_in[143:0]
+(97)conv_tb.weights_in[143:0]
+(98)conv_tb.weights_in[143:0]
+(99)conv_tb.weights_in[143:0]
+(100)conv_tb.weights_in[143:0]
+(101)conv_tb.weights_in[143:0]
+(102)conv_tb.weights_in[143:0]
+(103)conv_tb.weights_in[143:0]
+(104)conv_tb.weights_in[143:0]
+(105)conv_tb.weights_in[143:0]
+(106)conv_tb.weights_in[143:0]
+(107)conv_tb.weights_in[143:0]
+(108)conv_tb.weights_in[143:0]
+(109)conv_tb.weights_in[143:0]
+(110)conv_tb.weights_in[143:0]
+(111)conv_tb.weights_in[143:0]
+(112)conv_tb.weights_in[143:0]
+(113)conv_tb.weights_in[143:0]
+(114)conv_tb.weights_in[143:0]
+(115)conv_tb.weights_in[143:0]
+(116)conv_tb.weights_in[143:0]
+(117)conv_tb.weights_in[143:0]
+(118)conv_tb.weights_in[143:0]
+(119)conv_tb.weights_in[143:0]
+(120)conv_tb.weights_in[143:0]
+(121)conv_tb.weights_in[143:0]
+(122)conv_tb.weights_in[143:0]
+(123)conv_tb.weights_in[143:0]
+(124)conv_tb.weights_in[143:0]
+(125)conv_tb.weights_in[143:0]
+(126)conv_tb.weights_in[143:0]
+(127)conv_tb.weights_in[143:0]
+(128)conv_tb.weights_in[143:0]
+(129)conv_tb.weights_in[143:0]
+(130)conv_tb.weights_in[143:0]
+(131)conv_tb.weights_in[143:0]
+(132)conv_tb.weights_in[143:0]
+(133)conv_tb.weights_in[143:0]
+(134)conv_tb.weights_in[143:0]
+(135)conv_tb.weights_in[143:0]
+(136)conv_tb.weights_in[143:0]
+(137)conv_tb.weights_in[143:0]
+(138)conv_tb.weights_in[143:0]
+(139)conv_tb.weights_in[143:0]
+(140)conv_tb.weights_in[143:0]
+(141)conv_tb.weights_in[143:0]
+(142)conv_tb.weights_in[143:0]
+(143)conv_tb.weights_in[143:0]
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0
