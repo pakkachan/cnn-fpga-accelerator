@@ -1,6 +1,6 @@
 # CNN Inference Accelerator on an FPGA (Zynq-7020 / PYNQ-Z1) (Description t.b.f)
 
-A hardware accelerated CNN inference engine in Verilog on the Xilinx Zynq-7020 SoC. The design performs single-layer 2D convolution across 16 parallel MAC lanes over AXI-Stream, followed by ReLU activation layer and 2×2 max pooling, achieving 8.56× speedup over ARM Cortex-A9 software execution with bit-exact output matching.
+A hardware accelerated CNN inference engine in Verilog on the Xilinx Zynq-7020 SoC. The design performs single layer 2D convolution across 16 parallel MAC lanes over AXI-Stream, followed by ReLU activation layer and 2×2 max pooling, achieving 8.56× speedup over ARM Cortex-A9 software execution* with bit-exact output matching.
 
 ## Architecture:
 
@@ -64,7 +64,7 @@ This suggests a realistic speedup in the range of 20–100× over well optimised
 **Clock:** 100 MHz (FCLK_CLK0 from PS)  
 **Vivado:** 2025.1
 
-The 144 DSP48 usage (65%) corresponds to 9 DSP48s × 16 channels = 144, confirming every MAC unit mapped to a dedicated DSP48 slice rather than falling back to LUT-based multiplication.
+The 144 DSP48 usage (65%) corresponds to 9 DSP48s × 16 channels = 144, confirming every MAC unit successfully mapped to a dedicated DSP48 slice (via the `*use_dsp = "yes"*` synth attributes) rather than using LUT based multiplication. 
 
 ## Timing (Post-Route):
 
@@ -104,3 +104,8 @@ Open `conv_acc_v1.xpr` in Vivado, or create a project with all files under `rtl/
 3. Run all cells — verifies bit-exact match and reports latency/throughput
 
 ## Improvements for later:
+
+## Acknowledgements
+- https://thedatabus.in/convolver/ For inspiration on the conv stream engine
+- https://www.udemy.com/course/fpga-project-cnn-accelerator-for-digit-recognition/. For inspiration to do MNIST on hardware implented CNN. Did not purchase the udemy course. Just watched the free preview video.
+- Free Gemini AI via google searches. Frequent temporary google search Gemini AI prompts since all other AI platforms have **very tiny** free daily limits. Extremely useful as a buffed google search.
