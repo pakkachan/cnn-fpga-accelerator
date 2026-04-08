@@ -95,20 +95,6 @@ module cycle_counter #(
         end
     end
 
-    /*
-    Step 1 — Address phase (AR channel):
-    Master (PS) drives:  araddr, arvalid = 1   "I want to read this address"
-    Slave  (you) drives: arready = 1           "I accept your address"
-    → Transfer happens when both high same cycle
-
-    Step 2 — Data phase (R channel):
-    Slave  (you) drives: rdata, rvalid = 1     "here is your data"
-    Master (PS) drives:  rready = 1            "I accept your data"
-    → Transfer happens when both high same cycle
-    */
-
-
-
     // now we can deal with the axi transfer
     // could be done with an FSM, or just simple seq logic
     always_ff @(posedge aclk) begin
