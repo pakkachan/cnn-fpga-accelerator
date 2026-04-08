@@ -54,7 +54,7 @@ module top_layer#(
     assign ce = (s_axis_tvalid || frame_active) && s_axis_tready;
     
     // prolly assign this statement later down when we have inst the fifo
-    assign s_axis_tready = ~fifo_almost_full; 
+    // assign s_axis_tready = ~fifo_almost_full; 
     
     // ==============================================================
     // 2.) Instantiate fixed weights
