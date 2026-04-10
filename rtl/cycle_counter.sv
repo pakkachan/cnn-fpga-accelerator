@@ -25,6 +25,7 @@ module cycle_counter #(
     // 2^32 approx 4 billion hence the counter is large enough
 
     logic [31:0] count, latchedCount;
+    logic result_valid;
 
     typedef enum logic [1:0] {
         IDLE,
@@ -55,7 +56,7 @@ module cycle_counter #(
         end
 
         STOP: begin
-            nextState = IDLE;
+            nextState = state_t'(result_valid ? STOP : IDLE);
             // add in the axi signals
             // we are ready to read address and read data
         end
@@ -90,28 +91,30 @@ module cycle_counter #(
     always_ff @(posedge aclk) begin
         if(!aresetn) begin
             latchedCount <= 0;
-        end else if (currState == STOP) begin
+        end else if (currState == COUNTING && nextState == STOP) begin
             latchedCount <= count + 1;
         end
     end
 
-    // now we can deal with the axi transfer
-    // could be done with an FSM, or just simple seq logic
     always_ff @(posedge aclk) begin
         if(!aresetn) begin
-            s_axil_arready <= 0;
-        end else if (s_axil_arvalid) begin
-            s_axil_arready <= 1;
-        end else begin
-            s_axil_arready <= 0;
+            result_valid <= 0;
+        end else if (currState == COUNTING && nextState == STOP) begin
+            result_valid <= 1;
+        end else if (s_axil_rvalid && s_axil_rready) begin
+            result_valid <= 0;
         end
     end
+
+
+    // now we can deal with the axi transfer
+    assign s_axil_arready = s_axil_arvalid;
 
     // axi read
     always_ff @(posedge aclk) begin
         if(!aresetn) begin
             s_axil_rvalid <= 0;
-        end else if (s_axil_arready && s_axil_arvalid && !s_axil_rvalid) begin
+        end else if (s_axil_arvalid && !s_axil_rvalid) begin
             s_axil_rvalid <= 1;
         end else if (s_axil_rvalid && s_axil_rready) begin
             s_axil_rvalid <= 0;
@@ -125,7 +128,7 @@ module cycle_counter #(
     always_ff @(posedge aclk) begin
         if (!aresetn) begin
             s_axil_rdata <= 0;
-        end else if (s_axil_arvalid && !s_axil_arready) begin
+        end else if (s_axil_arvalid) begin
             case (s_axil_araddr[3:2])
                 2'b00: s_axil_rdata <= latchedCount;
                 2'b01: s_axil_rdata <= 32'(CLK_FREQ); // explicit cast
