@@ -16,7 +16,16 @@ module top_layer#(
     output signed [(BIT_WIDTH*OUT_CHANNELS) - 1: 0] m_axis_tdata,
     output m_axis_tvalid,
     input m_axis_tready, // tell master when ready to rx
-    output m_axis_tlast // todo later
+    output m_axis_tlast, // todo later
+
+        // AXI-Lite slave — cycle counter readout
+    input [3:0] s_axil_araddr,
+    input s_axil_arvalid,
+    output s_axil_arready,
+    output [31:0] s_axil_rdata,
+    output [1:0] s_axil_rresp,
+    output s_axil_rvalid,
+    input s_axil_rready
 );
 
     // FIFO signals
@@ -48,6 +57,12 @@ module top_layer#(
             end
         end
     end
+
+    // pixel_start: one shot pulse on the very first pixel handshake
+    // frame_active is 0 until the first s_axis_tready&&s_axis_tvalid, so this
+    // fires exactly once per frame and drops to 0 the next cycle when frame_active latches.
+    wire pixel_start;
+    assign pixel_start = s_axis_tvalid && s_axis_tready && !frame_active;
 
 
     // only process input when the input is valid (s_axis_tvalid) and 
@@ -222,5 +237,24 @@ module top_layer#(
     assign s_axis_tready = !fifo_almost_full;
     assign m_axis_tvalid = !fifo_empty;
     assign m_axis_tdata = fifo_data_out;
+
+    // ============================================================
+    // 6.) Cycle counter
+    // ============================================================
+    cycle_counter #(
+        .CLK_FREQ(100_000_000)
+    ) u_cycle_counter (
+        .aclk(clk),
+        .aresetn(~reset),        // top_layer uses active high reset
+        .pixel_start(pixel_start),
+        .frame_done(m_axis_tlast_int),
+        .s_axil_araddr(s_axil_araddr),
+        .s_axil_arvalid(s_axil_arvalid),
+        .s_axil_arready(s_axil_arready),
+        .s_axil_rdata(s_axil_rdata),
+        .s_axil_rresp(s_axil_rresp),
+        .s_axil_rvalid(s_axil_rvalid),
+        .s_axil_rready(s_axil_rready)
+    );
 
 endmodule
