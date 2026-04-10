@@ -226,6 +226,7 @@ module top_layer#(
         .reset(reset),
         .write_en(all_max_pool_valid), // only write when all out_channels have valid data
         .data_in({m_axis_tlast_int, fifo_data_in}),
+        .full(fifo_full),
         .almost_full(fifo_almost_full),
         .read_en(fifo_read_en),
         .data_out({m_axis_tlast, fifo_data_out}),
